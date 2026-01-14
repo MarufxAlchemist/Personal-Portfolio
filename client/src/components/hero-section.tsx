@@ -69,9 +69,9 @@ export function HeroSection() {
             >
               <motion.span
                 className="block"
-                initial={{ y: "110%", rotate: 5 }}
-                animate={{ y: mounted ? 0 : "110%", rotate: mounted ? 0 : 5 }}
-                transition={{ duration: 1.2, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ y: "110%", rotate: 10, skewY: 7 }}
+                animate={{ y: mounted ? 0 : "110%", rotate: mounted ? 0 : 10, skewY: mounted ? 0 : 7 }}
+                transition={{ duration: 1.4, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 CRAFTING
               </motion.span>
@@ -87,9 +87,9 @@ export function HeroSection() {
             >
               <motion.span
                 className="block"
-                initial={{ y: "110%", rotate: -3 }}
-                animate={{ y: mounted ? 0 : "110%", rotate: mounted ? 0 : -3 }}
-                transition={{ duration: 1.2, delay: 1.15, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ y: "110%", rotate: -5, skewY: -4 }}
+                animate={{ y: mounted ? 0 : "110%", rotate: mounted ? 0 : -5, skewY: mounted ? 0 : -4 }}
+                transition={{ duration: 1.4, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
               >
                 DIGITAL
               </motion.span>
@@ -105,9 +105,9 @@ export function HeroSection() {
             >
               <motion.span
                 className="block"
-                initial={{ y: "110%", rotate: 2 }}
-                animate={{ y: mounted ? 0 : "110%", rotate: mounted ? 0 : 2 }}
-                transition={{ duration: 1.2, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ y: "110%", rotate: 5, skewY: 3 }}
+                animate={{ y: mounted ? 0 : "110%", rotate: mounted ? 0 : 5, skewY: mounted ? 0 : 3 }}
+                transition={{ duration: 1.4, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
               >
                 EXPERIENCES
               </motion.span>
