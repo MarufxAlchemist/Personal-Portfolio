@@ -29,16 +29,16 @@ export function Canvas3D({ className }: Canvas3DProps) {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    const particleCount = 50;
+    const particleCount = 60;
     particlesRef.current = Array.from({ length: particleCount }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       z: Math.random() * 1000,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
-      vz: (Math.random() - 0.5) * 2,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      vz: (Math.random() - 0.5) * 1.5,
       size: Math.random() * 2 + 0.5,
-      opacity: Math.random() * 0.3 + 0.1,
+      opacity: Math.random() * 0.2 + 0.05,
     }));
 
     return () => {
