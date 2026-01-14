@@ -79,7 +79,7 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
           <motion.div
             className="absolute inset-0"
             animate={{
-              scale: isHovered ? 1.08 : 1,
+              scale: isHovered ? 1.05 : 1,
               filter: isHovered ? "blur(0px)" : "blur(0px)",
             }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -102,15 +102,15 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
           </motion.div>
           
           <motion.div
-            className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"
-            animate={{ opacity: isHovered ? 0.9 : 0.7 }}
+            className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"
+            animate={{ opacity: isHovered ? 0.8 : 0.6 }}
             transition={{ duration: 0.4 }}
           />
           
           <motion.div
             className="absolute bottom-0 left-0 right-0 p-6 md:p-8"
-            animate={{ y: isHovered ? -10 : 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            animate={{ opacity: isHovered ? 1 : 0.9 }}
+            transition={{ duration: 0.4 }}
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1">
@@ -126,8 +126,6 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
                 
                 <motion.h3 
                   className="text-2xl md:text-3xl lg:text-4xl font-display font-medium tracking-tight text-foreground mb-2"
-                  animate={{ x: isHovered ? 10 : 0 }}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 >
                   {project.title}
                 </motion.h3>
@@ -136,9 +134,8 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
                   className="text-base text-muted-foreground max-w-md"
                   animate={{ 
                     opacity: isHovered ? 1 : 0.7,
-                    x: isHovered ? 10 : 0,
                   }}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
+                  transition={{ duration: 0.4 }}
                 >
                   {project.subtitle}
                 </motion.p>
