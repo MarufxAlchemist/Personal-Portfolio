@@ -23,19 +23,19 @@ export function PaintingBackground() {
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-black">
       {/* Base layer: Very dim or blurred version of the painting for depth */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-10 blur-sm scale-105"
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-25 blur-sm scale-105"
         style={{ backgroundImage: 'url("/painting.jpeg")' }}
       />
-      
+
       {/* Interactive reveal layer */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ 
+        style={{
           backgroundImage: 'url("/painting.jpeg")',
           maskImage: `radial-gradient(circle 250px at var(--reveal-x) var(--reveal-y), black 0%, rgba(0,0,0,0.4) 40%, transparent 100%)`,
           WebkitMaskImage: `radial-gradient(circle 250px at var(--reveal-x) var(--reveal-y), black 0%, rgba(0,0,0,0.4) 40%, transparent 100%)`,
-          opacity: 0.25,
+          opacity: 0.50,
           // We use motion values directly in style for performance
           ["--reveal-x" as any]: revealX,
           ["--reveal-y" as any]: revealY,

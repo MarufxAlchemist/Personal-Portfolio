@@ -11,7 +11,7 @@ import { PaintingBackground } from "@/components/painting-background";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-background cursor-none">
+    <div className="relative min-h-screen cursor-none">
       <CustomCursor />
       <PaintingBackground />
       <Canvas3D />
