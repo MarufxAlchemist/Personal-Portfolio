@@ -10,7 +10,7 @@ export function CustomCursor() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { stiffness: 400, damping: 28, mass: 0.5 };
+  const springConfig = { stiffness: 800, damping: 20, mass: 0.3 };
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
 
@@ -23,12 +23,12 @@ export function CustomCursor() {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const isInteractive = 
-        target.closest('button') || 
-        target.closest('a') || 
+      const isInteractive =
+        target.closest('button') ||
+        target.closest('a') ||
         target.closest('[role="button"]') ||
         target.closest('.group');
-      
+
       setIsHovering(!!isInteractive);
     };
 

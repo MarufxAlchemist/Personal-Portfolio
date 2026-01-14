@@ -46,8 +46,8 @@ export default function InteractiveBackground() {
         <div
             className="interactive-bg"
             style={{
-                maskImage: `radial-gradient(circle 300px at ${mousePosition.x}% ${mousePosition.y}%, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 40%, transparent 100%)`,
-                WebkitMaskImage: `radial-gradient(circle 300px at ${mousePosition.x}% ${mousePosition.y}%, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 40%, transparent 100%)`,
+                maskImage: `radial-gradient(circle 300px at ${mousePosition.x}% ${mousePosition.y}%, transparent 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.8) 100%)`,
+                WebkitMaskImage: `radial-gradient(circle 300px at ${mousePosition.x}% ${mousePosition.y}%, transparent 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.8) 100%)`,
             }}
         />
     );
