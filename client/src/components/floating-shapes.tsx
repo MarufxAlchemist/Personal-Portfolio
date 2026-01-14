@@ -36,9 +36,9 @@ export function FloatingShapes({ className, variant = "hero" }: FloatingShapesPr
             height: shape.size,
           }}
           animate={{
-            x: normalizedX * shape.parallax * 30,
-            y: normalizedY * shape.parallax * 30 + scrollProgress * shape.scrollSpeed * 100,
-            rotate: scrollProgress * shape.rotation,
+            x: normalizedX * shape.parallax * 30 + Math.sin(Date.now() * 0.001 + i) * 10,
+            y: normalizedY * shape.parallax * 30 + scrollProgress * shape.scrollSpeed * 100 + Math.cos(Date.now() * 0.001 + i) * 10,
+            rotate: scrollProgress * shape.rotation + (Date.now() * 0.01 % 360),
           }}
           transition={{
             type: "spring",

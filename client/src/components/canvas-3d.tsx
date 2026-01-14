@@ -64,9 +64,13 @@ export function Canvas3D({ className }: Canvas3DProps) {
       const fov = 500;
 
       particlesRef.current.forEach((particle) => {
-        particle.x += particle.vx + normalizedX * 0.5;
-        particle.y += particle.vy + normalizedY * 0.5;
-        particle.z += particle.vz - scrollProgress * 10;
+        particle.x += particle.vx + normalizedX * 0.3;
+        particle.y += particle.vy + normalizedY * 0.3;
+        particle.z += particle.vz - scrollProgress * 5;
+
+        // Subtle ambient drifting
+        particle.x += Math.sin(Date.now() * 0.0005 + particle.z) * 0.1;
+        particle.y += Math.cos(Date.now() * 0.0005 + particle.x) * 0.1;
 
         if (particle.z < 1) particle.z = 1000;
         if (particle.z > 1000) particle.z = 1;
