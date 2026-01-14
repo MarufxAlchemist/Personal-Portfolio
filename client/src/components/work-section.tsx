@@ -64,32 +64,32 @@ export function WorkSection() {
   return (
     <section 
       id="work" 
-      className="relative py-section"
+      className="relative py-dramatic"
       data-testid="section-work"
     >
       <FloatingShapes variant="section" className="opacity-50" />
 
       <div className="container mx-auto px-6 md:px-12">
-        <RevealSection className="mb-20 md:mb-32">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
-              <span className="text-meta uppercase tracking-[0.3em] text-muted-foreground block mb-4">
+        <RevealSection className="mb-32 md:mb-48">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-12">
+            <div className="max-w-3xl">
+              <span className="text-meta uppercase tracking-[0.4em] text-muted-foreground block mb-6">
                 Selected Work
               </span>
-              <h2 className="text-section font-display font-medium tracking-tight text-foreground">
+              <h2 className="text-section md:text-7xl font-display font-medium tracking-tight text-foreground leading-[0.9]">
                 Projects that
                 <br />
-                <span className="font-editorial italic">push boundaries</span>
+                <span className="font-editorial italic font-light">push boundaries</span>
               </h2>
             </div>
-            <p className="text-muted-foreground max-w-sm text-lg">
+            <p className="text-muted-foreground max-w-sm text-xl leading-relaxed">
               A curated collection of digital experiences, brand identities, and 
               creative experiments from the past years.
             </p>
           </div>
         </RevealSection>
 
-        <div className="space-y-16 md:space-y-24">
+        <div className="space-y-32 md:space-y-56">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.id}

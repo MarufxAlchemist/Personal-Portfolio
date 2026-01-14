@@ -54,15 +54,15 @@ export function AboutSection() {
             </RevealSection>
 
             <RevealSection delay={0.1}>
-              <h2 className="text-section font-display font-medium tracking-tight text-foreground mb-8">
+              <h2 className="text-section md:text-7xl font-display font-medium tracking-tight text-foreground mb-12 leading-[0.9]">
                 Building at the
                 <br />
-                <span className="font-editorial italic">edge of possible</span>
+                <span className="font-editorial italic font-light">edge of possible</span>
               </h2>
             </RevealSection>
 
             <RevealSection delay={0.2}>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 I'm a creative developer and digital artist with over a decade of 
                 experience crafting memorable digital experiences. My work lives 
                 at the intersection of design, technology, and storytelling.
@@ -70,7 +70,7 @@ export function AboutSection() {
             </RevealSection>
 
             <RevealSection delay={0.3}>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-12">
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-20 max-w-xl">
                 I believe in the power of digital craft to evoke emotion, challenge 
                 perception, and create lasting impact. Every project is an opportunity 
                 to push boundaries and discover something new.

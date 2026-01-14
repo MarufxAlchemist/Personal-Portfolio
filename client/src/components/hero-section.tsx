@@ -60,54 +60,54 @@ export function HeroSection() {
             </span>
           </motion.div>
 
-          <div className="overflow-hidden mb-6">
+          <div className="overflow-hidden mb-8 md:mb-12">
             <motion.h1 
-              className="text-hero font-display font-bold tracking-tight text-foreground leading-none"
+              className="text-hero font-display font-bold tracking-tight text-foreground leading-[0.85]"
               style={{
-                transform: `translate(${normalizedX * 5}px, ${normalizedY * 3}px)`,
+                transform: `translate(${normalizedX * 12}px, ${normalizedY * 8}px)`,
               }}
             >
               <motion.span
                 className="block"
-                initial={{ y: "100%" }}
-                animate={{ y: mounted ? 0 : "100%" }}
-                transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ y: "110%", rotate: 5 }}
+                animate={{ y: mounted ? 0 : "110%", rotate: mounted ? 0 : 5 }}
+                transition={{ duration: 1.2, delay: 1, ease: [0.16, 1, 0.3, 1] }}
               >
                 CRAFTING
               </motion.span>
             </motion.h1>
           </div>
 
-          <div className="overflow-hidden mb-6">
+          <div className="overflow-hidden mb-8 md:mb-12">
             <motion.h1 
-              className="text-hero font-editorial italic font-normal tracking-tight text-foreground leading-none"
+              className="text-hero font-editorial italic font-light tracking-tight text-foreground leading-[0.85]"
               style={{
-                transform: `translate(${normalizedX * 8}px, ${normalizedY * 5}px)`,
+                transform: `translate(${normalizedX * -15}px, ${normalizedY * -10}px)`,
               }}
             >
               <motion.span
                 className="block"
-                initial={{ y: "100%" }}
-                animate={{ y: mounted ? 0 : "100%" }}
-                transition={{ duration: 1, delay: 1.15, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ y: "110%", rotate: -3 }}
+                animate={{ y: mounted ? 0 : "110%", rotate: mounted ? 0 : -3 }}
+                transition={{ duration: 1.2, delay: 1.15, ease: [0.16, 1, 0.3, 1] }}
               >
                 DIGITAL
               </motion.span>
             </motion.h1>
           </div>
 
-          <div className="overflow-hidden mb-12">
+          <div className="overflow-hidden mb-16 md:mb-24">
             <motion.h1 
-              className="text-hero font-display font-bold tracking-tight text-foreground leading-none"
+              className="text-hero font-display font-bold tracking-tight text-foreground leading-[0.85]"
               style={{
-                transform: `translate(${normalizedX * 3}px, ${normalizedY * 4}px)`,
+                transform: `translate(${normalizedX * 8}px, ${normalizedY * 12}px)`,
               }}
             >
               <motion.span
                 className="block"
-                initial={{ y: "100%" }}
-                animate={{ y: mounted ? 0 : "100%" }}
-                transition={{ duration: 1, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ y: "110%", rotate: 2 }}
+                animate={{ y: mounted ? 0 : "110%", rotate: mounted ? 0 : 2 }}
+                transition={{ duration: 1.2, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
               >
                 EXPERIENCES
               </motion.span>

@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { RevealSection } from "./reveal-section";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Mail, MapPin } from "lucide-react";
-import { SiGithub, SiLinkedin, SiDribbble, SiTwitter } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiDribbble, SiX } from "react-icons/si";
 
 const socialLinks = [
-  { icon: SiTwitter, label: "Twitter", href: "#" },
+  { icon: SiX, label: "Twitter", href: "#" },
   { icon: SiGithub, label: "GitHub", href: "#" },
   { icon: SiLinkedin, label: "LinkedIn", href: "#" },
   { icon: SiDribbble, label: "Dribbble", href: "#" },
