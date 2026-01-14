@@ -7,11 +7,13 @@ import { Footer } from "@/components/footer";
 import { Canvas3D } from "@/components/canvas-3d";
 import { TextMarquee } from "@/components/marquee";
 import { CustomCursor } from "@/components/custom-cursor";
+import { PaintingBackground } from "@/components/painting-background";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-background cursor-none">
       <CustomCursor />
+      <PaintingBackground />
       <Canvas3D />
       <Navigation />
       <main>
