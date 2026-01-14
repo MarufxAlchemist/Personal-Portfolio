@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useMousePosition } from "@/hooks/use-mouse-position";
 import { FloatingShapes } from "./floating-shapes";
 import { ArrowDown } from "lucide-react";
@@ -7,6 +7,11 @@ import { ArrowDown } from "lucide-react";
 export function HeroSection() {
   const { normalizedX, normalizedY } = useMousePosition();
   const [mounted, setMounted] = useState(false);
+  const { scrollY } = useScroll();
+  
+  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   useEffect(() => {
     setMounted(true);
@@ -47,7 +52,10 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <motion.div 
+        className="container mx-auto px-6 md:px-12 relative z-10"
+        style={{ y: y1, opacity }}
+      >
         <div className="max-w-6xl">
           <motion.div
             className="mb-8"
@@ -152,7 +160,7 @@ export function HeroSection() {
             </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <motion.button
         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"

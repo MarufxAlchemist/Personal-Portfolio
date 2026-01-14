@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, useScroll } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 
@@ -23,6 +23,13 @@ interface ProjectCardProps {
 export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"]
+  });
+
+  const yParallax = useTransform(scrollYProgress, [0, 1], [50, -50]);
   
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -62,6 +69,7 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
         rotateX,
         rotateY,
         scale,
+        y: yParallax,
         transformStyle: "preserve-3d",
       }}
       onMouseMove={handleMouseMove}
