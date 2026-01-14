@@ -29,7 +29,7 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
     offset: ["start end", "end start"]
   });
 
-  const yParallax = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const yParallax = useTransform(scrollYProgress, [0, 1], [30, -30]);
   
   const x = useMotionValue(0);
   const y = useMotionValue(0);

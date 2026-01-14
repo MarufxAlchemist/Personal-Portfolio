@@ -16,39 +16,39 @@ const animations: Record<string, Variants> = {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] }
     },
   },
   "slide-up": {
-    hidden: { opacity: 0, y: 60 },
+    hidden: { opacity: 0, y: 40 },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 1, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] }
     },
   },
   "slide-left": {
-    hidden: { opacity: 0, x: -40 },
+    hidden: { opacity: 0, x: -30 },
     visible: { 
       opacity: 1, 
       x: 0,
-      transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] }
     },
   },
   scale: {
-    hidden: { opacity: 0, scale: 0.9 },
+    hidden: { opacity: 0, scale: 0.96 },
     visible: { 
       opacity: 1, 
       scale: 1,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] }
     },
   },
   blur: {
-    hidden: { opacity: 0, filter: "blur(10px)" },
+    hidden: { opacity: 0, filter: "blur(8px)" },
     visible: { 
       opacity: 1, 
       filter: "blur(0px)",
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] }
     },
   },
 };

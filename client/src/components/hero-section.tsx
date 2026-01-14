@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useMousePosition } from "@/hooks/use-mouse-position";
 import { FloatingShapes } from "./floating-shapes";
+import { RevealSection } from "./reveal-section";
 import { ArrowDown } from "lucide-react";
 
 export function HeroSection() {
@@ -9,9 +10,9 @@ export function HeroSection() {
   const [mounted, setMounted] = useState(false);
   const { scrollY } = useScroll();
   
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const y1 = useTransform(scrollY, [0, 800], [0, 120]);
+  const y2 = useTransform(scrollY, [0, 800], [0, -80]);
+  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
   useEffect(() => {
     setMounted(true);
@@ -29,7 +30,9 @@ export function HeroSection() {
       className="relative min-h-screen flex flex-col justify-center overflow-hidden noise"
       data-testid="section-hero"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background/95" />
+      <RevealSection animation="fade" className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background/95" />
+      </RevealSection>
       
       <FloatingShapes variant="hero" />
       
