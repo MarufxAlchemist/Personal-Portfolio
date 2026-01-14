@@ -6,10 +6,12 @@ import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { Canvas3D } from "@/components/canvas-3d";
 import { TextMarquee } from "@/components/marquee";
+import { CustomCursor } from "@/components/custom-cursor";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-background">
+    <div className="relative min-h-screen bg-background cursor-none">
+      <CustomCursor />
       <Canvas3D />
       <Navigation />
       <main>
