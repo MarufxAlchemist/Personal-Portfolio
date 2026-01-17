@@ -9,7 +9,7 @@ export function HeroSection() {
   const { normalizedX, normalizedY } = useMousePosition();
   const [mounted, setMounted] = useState(false);
   const { scrollY } = useScroll();
-  
+
   const y1 = useTransform(scrollY, [0, 800], [0, 120]);
   const y2 = useTransform(scrollY, [0, 800], [0, -80]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
@@ -26,18 +26,18 @@ export function HeroSection() {
   };
 
   return (
-    <section 
+    <section
       className="relative min-h-screen flex flex-col justify-center overflow-hidden noise"
       data-testid="section-hero"
     >
       <RevealSection animation="fade" className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background/95" />
       </RevealSection>
-      
+
       <FloatingShapes variant="hero" />
-      
+
       <div className="absolute inset-0 pointer-events-none">
-        <div 
+        <div
           className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-20"
           style={{
             background: "radial-gradient(circle, hsl(var(--foreground) / 0.03) 0%, transparent 70%)",
@@ -45,7 +45,7 @@ export function HeroSection() {
             transition: "transform 0.3s ease-out",
           }}
         />
-        <div 
+        <div
           className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-15"
           style={{
             background: "radial-gradient(circle, hsl(var(--foreground) / 0.04) 0%, transparent 70%)",
@@ -55,7 +55,7 @@ export function HeroSection() {
         />
       </div>
 
-      <motion.div 
+      <motion.div
         className="container mx-auto px-6 md:px-12 relative z-10"
         style={{ y: y1, opacity }}
       >
@@ -72,7 +72,7 @@ export function HeroSection() {
           </motion.div>
 
           <div className="overflow-hidden mb-8 md:mb-12">
-            <motion.h1 
+            <motion.h1
               className="text-hero font-display font-bold tracking-tight text-foreground leading-[0.85]"
               style={{
                 transform: `translate(${normalizedX * 12}px, ${normalizedY * 8}px)`,
@@ -90,7 +90,7 @@ export function HeroSection() {
           </div>
 
           <div className="overflow-hidden mb-8 md:mb-12">
-            <motion.h1 
+            <motion.h1
               className="text-hero font-editorial italic font-light tracking-tight text-foreground leading-[0.85]"
               style={{
                 transform: `translate(${normalizedX * -15}px, ${normalizedY * -10}px)`,
@@ -108,7 +108,7 @@ export function HeroSection() {
           </div>
 
           <div className="overflow-hidden mb-16 md:mb-24">
-            <motion.h1 
+            <motion.h1
               className="text-hero font-display font-bold tracking-tight text-foreground leading-[0.85]"
               style={{
                 transform: `translate(${normalizedX * 8}px, ${normalizedY * 12}px)`,
@@ -132,8 +132,8 @@ export function HeroSection() {
               animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
               transition={{ duration: 0.8, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              A multidisciplinary studio at the intersection of design, 
-              technology, and art. Creating immersive digital experiences 
+              A multidisciplinary studio at the intersection of design,
+              technology, and art. Creating immersive digital experiences
               that challenge conventions.
             </motion.p>
 
@@ -148,7 +148,7 @@ export function HeroSection() {
                   Based in
                 </p>
                 <p className="text-sm text-foreground/80">
-                  Los Angeles, CA
+                  Pune, India
                 </p>
               </div>
               <div className="w-px h-12 bg-border hidden md:block" />

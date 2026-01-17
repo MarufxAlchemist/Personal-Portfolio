@@ -13,7 +13,7 @@ export default function InteractiveBackground() {
             targetPosition.current = { x, y };
         };
 
-        // Smooth animation loop with slight delay
+        // Smooth animation loop 
         const animate = () => {
             setMousePosition((prev) => {
                 const dx = targetPosition.current.x - prev.x;

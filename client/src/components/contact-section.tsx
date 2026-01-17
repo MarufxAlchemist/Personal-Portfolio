@@ -6,15 +6,15 @@ import { SiGithub, SiLinkedin, SiDribbble, SiX } from "react-icons/si";
 
 const socialLinks = [
   { icon: SiX, label: "Twitter", href: "#" },
-  { icon: SiGithub, label: "GitHub", href: "#" },
-  { icon: SiLinkedin, label: "LinkedIn", href: "#" },
+  { icon: SiGithub, label: "GitHub", href: "https://github.com/MarufxAlchemist" },
+  { icon: SiLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/maruf-nadaf/" },
   { icon: SiDribbble, label: "Dribbble", href: "#" },
 ];
 
 export function ContactSection() {
   return (
-    <section 
-      id="contact" 
+    <section
+      id="contact"
       className="relative py-dramatic"
       data-testid="section-contact"
     >
@@ -38,21 +38,21 @@ export function ContactSection() {
 
           <RevealSection delay={0.2}>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-              Whether you have a project in mind, want to collaborate, or just 
+              Whether you have a project in mind, want to collaborate, or just
               want to say hello—I'd love to hear from you.
             </p>
           </RevealSection>
 
           <RevealSection delay={0.3}>
             <motion.a
-              href="mailto:hello@studio.design"
+              href="mailto:maruffnadaf@gmail.com"
               className="inline-flex items-center gap-3 text-2xl md:text-3xl font-display text-foreground group mb-16"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               data-testid="link-email"
             >
               <Mail className="w-6 h-6 md:w-8 md:h-8 text-muted-foreground group-hover:text-foreground transition-colors" />
-              hello@studio.design
+              maruffnadaf@gmail.com
               <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
             </motion.a>
           </RevealSection>
@@ -79,12 +79,10 @@ export function ContactSection() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-muted-foreground">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                <span className="text-sm">Los Angeles, CA</span>
+                <span className="text-sm">Pune, India</span>
               </div>
               <span className="hidden md:block text-border">|</span>
-              <span className="text-sm">Available for freelance</span>
-              <span className="hidden md:block text-border">|</span>
-              <span className="text-sm">Open to remote work</span>
+              <span className="text-sm">Open to remote and On-site work</span>
             </div>
           </RevealSection>
         </div>
