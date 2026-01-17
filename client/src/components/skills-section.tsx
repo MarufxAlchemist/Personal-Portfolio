@@ -47,7 +47,7 @@ const skillCategories = [
     },
     {
         title: "Languages",
-        skills: ["English", "Hindi (Native)", "Marathi"],
+        skills: ["English", "Hindi", "Marathi"],
     },
 ];
 
