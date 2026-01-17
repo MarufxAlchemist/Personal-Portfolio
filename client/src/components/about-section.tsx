@@ -3,14 +3,14 @@ import { RevealSection, RevealGroup } from "./reveal-section";
 import { useMousePosition } from "@/hooks/use-mouse-position";
 
 const capabilities = [
-  "Brand Strategy",
-  "Visual Identity",
   "Web Development",
-  "Motion Design",
-  "3D & WebGL",
-  "Creative Direction",
   "UI/UX Design",
+  "Data Analysis & Visualization",
+  "Machine Learning & AI",
+  "Cloud Computing (AWS)",
   "Interactive Experiences",
+  "3D & WebGL",
+  "Motion Design",
 ];
 
 const stats = [
@@ -24,8 +24,8 @@ export function AboutSection() {
   const { normalizedX, normalizedY } = useMousePosition();
 
   return (
-    <section 
-      id="about" 
+    <section
+      id="about"
       className="relative py-dramatic overflow-hidden"
       data-testid="section-about"
     >
@@ -63,16 +63,16 @@ export function AboutSection() {
 
             <RevealSection delay={0.2}>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                I'm a creative developer and digital artist with over a decade of 
-                experience crafting memorable digital experiences. My work lives 
+                I'm a creative developer and digital artist with over a decade of
+                experience crafting memorable digital experiences. My work lives
                 at the intersection of design, technology, and storytelling.
               </p>
             </RevealSection>
 
             <RevealSection delay={0.3}>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-20 max-w-xl">
-                I believe in the power of digital craft to evoke emotion, challenge 
-                perception, and create lasting impact. Every project is an opportunity 
+                I believe in the power of digital craft to evoke emotion, challenge
+                perception, and create lasting impact. Every project is an opportunity
                 to push boundaries and discover something new.
               </p>
             </RevealSection>
@@ -102,8 +102,8 @@ export function AboutSection() {
 
             <div className="space-y-0">
               {capabilities.map((capability, i) => (
-                <RevealSection 
-                  key={capability} 
+                <RevealSection
+                  key={capability}
                   delay={0.25 + i * 0.05}
                   animation="slide-left"
                 >
@@ -129,7 +129,7 @@ export function AboutSection() {
                   Philosophy
                 </p>
                 <blockquote className="text-xl md:text-2xl font-editorial italic text-foreground/90 leading-relaxed">
-                  "The best digital experiences don't just function—they feel. 
+                  "The best digital experiences don't just function—they feel.
                   They resonate with users on a level that transcends utility."
                 </blockquote>
               </div>

@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -81,13 +82,13 @@ export function Navigation() {
                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
                 </motion.button>
               ))}
-              
+
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.5 }}
               >
-                <Button 
+                <Button
                   size="sm"
                   onClick={() => scrollToSection("#contact")}
                   data-testid="button-lets-talk"
@@ -157,14 +158,14 @@ export function Navigation() {
                   {item.label}
                 </motion.button>
               ))}
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ delay: 0.3, duration: 0.4 }}
               >
-                <Button 
+                <Button
                   size="lg"
                   onClick={() => scrollToSection("#contact")}
                   className="mt-4"
