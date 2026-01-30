@@ -13,6 +13,7 @@ const badgeVariants = cva(
   " hover-elevate ",
   {
     variants: {
+      // Style definitions for different badge variants
       variant: {
         default:
           "border-transparent bg-primary text-primary-foreground shadow-xs",
