@@ -3,6 +3,7 @@ import * as React from "react"
 // Import cva for variant management
 import { cva, type VariantProps } from "class-variance-authority"
 
+// Utility for class merging
 import { cn } from "@/lib/utils"
 
 // Badge variants configuration
