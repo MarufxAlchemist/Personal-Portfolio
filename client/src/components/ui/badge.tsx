@@ -15,6 +15,7 @@ const badgeVariants = cva(
     variants: {
       // Style definitions for different badge variants
       variant: {
+        // Default variant primary style
         default:
           "border-transparent bg-primary text-primary-foreground shadow-xs",
         // Secondary variant style
