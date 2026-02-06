@@ -46,7 +46,7 @@ export interface BadgeProps
 function Badge({ className, variant, ...props }: BadgeProps) {
   // Render the badge element
   return (
-    <div className={cn(badgeVariants({ variant }), className /* Merge custom classes */)} {...props} />
+    <div className={cn(badgeVariants({ variant }), className /* Merge custom classes */)} {...props /* Spread rest props */} />
   );
 }
 
