@@ -3,7 +3,6 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-// Badge variants configuration
 const badgeVariants = cva(
 
   // Base badge styles
@@ -12,9 +11,7 @@ const badgeVariants = cva(
   " hover-elevate ",
   {
     variants: {
-      // Style definitions for different badge variants
       variant: {
-        // Default variant primary style
         default:
           "border-transparent bg-primary text-primary-foreground shadow-xs",
         // Secondary variant style
