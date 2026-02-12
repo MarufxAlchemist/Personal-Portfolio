@@ -16,7 +16,6 @@ const badgeVariants = cva(
         destructive:
           "border-transparent bg-destructive text-destructive-foreground shadow-xs",
 
-        // Outline variant style
         outline: " border [border-color:var(--badge-outline)] shadow-xs",
       },
     },
