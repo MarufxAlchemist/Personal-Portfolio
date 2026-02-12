@@ -20,7 +20,6 @@ const badgeVariants = cva(
       },
     },
     defaultVariants: {
-      // Default to "default" variant
       variant: "default",
     },
   },
