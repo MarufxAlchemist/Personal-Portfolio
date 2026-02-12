@@ -19,7 +19,6 @@ const badgeVariants = cva(
         outline: " border [border-color:var(--badge-outline)] shadow-xs",
       },
     },
-    // Default variants configuration
     defaultVariants: {
       // Default to "default" variant
       variant: "default",
