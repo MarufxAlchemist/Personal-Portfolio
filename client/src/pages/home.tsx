@@ -9,7 +9,7 @@ import { Canvas3D } from "@/components/canvas-3d";
 import { TextMarquee } from "@/components/marquee";
 import { CustomCursor } from "@/components/custom-cursor";
 import { PaintingBackground } from "@/components/painting-background";
-
+//home
 export default function Home() {
   return (
     <div className="relative min-h-screen cursor-none">
