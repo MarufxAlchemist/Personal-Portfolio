@@ -23,9 +23,9 @@
 - **Meta Text**: Intentionally small (10-12px for dates, categories)
 
 ### Font Selection
-- Modern editorial grotesk or serif-inspired typefaces
-- Typography treated as visual element, not just content
-- Strong, confident character with high x-height
+- Modern editorial grotesk or serif-inspired typefaces.
+- Typography treated as visual element, not just content.
+- Strong, confident character with high x-height.
 
 ## Layout System
 
