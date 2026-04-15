@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, type ReactNode } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useScroll } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
@@ -12,6 +12,8 @@ export interface Project {
   description: string;
   image: string;
   color: string;
+  thumbnail?: (props: { isHovered: boolean }) => ReactNode;
+  link?: string;
 }
 
 interface ProjectCardProps {
@@ -92,21 +94,35 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
             }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div 
-              className="w-full h-full bg-gradient-to-br"
-              style={{
-                background: `linear-gradient(135deg, ${project.color}20 0%, ${project.color}05 50%, transparent 100%)`,
-              }}
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div 
-                className="w-3/4 h-3/4 rounded-md bg-gradient-to-br from-foreground/5 to-foreground/10 flex items-center justify-center"
-              >
-                <span className="text-meta uppercase tracking-[0.3em] text-muted-foreground/60">
-                  {project.category}
-                </span>
+            {project.thumbnail ? (
+              <div className="w-full h-full relative">
+                <div 
+                  className="absolute inset-0"
+                  style={{
+                    background: `linear-gradient(135deg, ${project.color}15 0%, ${project.color}05 50%, transparent 100%)`,
+                  }}
+                />
+                {project.thumbnail({ isHovered })}
               </div>
-            </div>
+            ) : (
+              <>
+                <div 
+                  className="w-full h-full bg-gradient-to-br"
+                  style={{
+                    background: `linear-gradient(135deg, ${project.color}20 0%, ${project.color}05 50%, transparent 100%)`,
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div 
+                    className="w-3/4 h-3/4 rounded-md bg-gradient-to-br from-foreground/5 to-foreground/10 flex items-center justify-center"
+                  >
+                    <span className="text-meta uppercase tracking-[0.3em] text-muted-foreground/60">
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+              </>
+            )}
           </motion.div>
           
           <motion.div

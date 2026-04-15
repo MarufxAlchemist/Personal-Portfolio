@@ -4,17 +4,25 @@ import { ProjectCard, type Project } from "./project-card";
 import { ProjectModal } from "./project-modal";
 import { RevealSection } from "./reveal-section";
 import { FloatingShapes } from "./floating-shapes";
+import { MonteCarloCanvas } from "./monte-carlo-canvas";
 
 const projects: Project[] = [
   {
     id: "1",
-    title: "METAMORPHOSIS",
-    subtitle: "An immersive WebGL experience exploring identity transformation",
-    category: "Interactive Experience",
-    year: "2024",
-    description: "A groundbreaking digital experience that pushes the boundaries of web technology. Using advanced WebGL techniques and real-time audio visualization, users navigate through an abstract landscape that responds to their every interaction. The project explores themes of personal growth and digital identity in the modern age.",
+    title: "REGIME-SWITCHING MONTE CARLO",
+    subtitle: "Systemic risk engine with Hidden Markov regime detection and contagion-aware VaR estimation",
+    category: "Quantitative Finance",
+    year: "2025",
+    description: "A production-grade systemic risk simulation engine that combines Hidden Markov Models for market regime detection with Monte Carlo path generation. Features dynamic correlation networks, Cholesky-decomposed contagion propagation, and expanding-window backtesting. The engine estimates Value-at-Risk across bull, sideways, and crisis regimes using 10,000+ simulated paths with regime-switching volatility and drift parameters calibrated on real multi-sector ETF data.",
     image: "/placeholder-1.jpg",
-    color: "#6366f1",
+    color: "#22d3ee",
+    thumbnail: ({ isHovered }) => (
+      <MonteCarloCanvas
+        className="absolute inset-0"
+        isHovered={isHovered}
+      />
+    ),
+    link: "https://github.com/MarufxAlchemist/Regime-Switching-Monte-Carlo-Simulation",
   },
   {
     id: "2",
