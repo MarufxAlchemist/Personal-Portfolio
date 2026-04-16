@@ -6,7 +6,7 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // put application routes here
+  // put application routes here.
   // prefix all routes with /api
 
   // use storage to perform CRUD operations on the storage interface
