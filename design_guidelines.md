@@ -16,7 +16,7 @@
 
 ## Typography System
 
-### Hierarchy (Extreme Scale Differences)
+### Hierarchy (Extreme Scale Differences).
 - **Hero Headlines**: Massive scale (120-200px desktop, 60-80px mobile)
 - **Section Titles**: Large editorial scale (48-72px)
 - **Body Text**: Standard readable size (16-18px)
