@@ -4,6 +4,7 @@ import { ProjectCard, type Project } from "./project-card";
 import { ProjectModal } from "./project-modal";
 import { RevealSection } from "./reveal-section";
 import { FloatingShapes } from "./floating-shapes";
+import { MonteCarloInteractive } from "./monte-carlo-interactive";
 
 
 const projects: Project[] = [
@@ -16,6 +17,12 @@ const projects: Project[] = [
     description: "A production-grade systemic risk simulation engine that combines Hidden Markov Models for market regime detection with Monte Carlo path generation. Features dynamic correlation networks, Cholesky-decomposed contagion propagation, and expanding-window backtesting. The engine estimates Value-at-Risk across bull, sideways, and crisis regimes using 10,000+ simulated paths with regime-switching volatility and drift parameters calibrated on real multi-sector ETF data.",
     image: "/monte-carlo-thumbnail.png",
     color: "#22d3ee",
+    thumbnail: ({ isHovered }) => (
+      <MonteCarloInteractive
+        className="absolute inset-0"
+        isHovered={isHovered}
+      />
+    ),
     link: "https://github.com/MarufxAlchemist/Regime-Switching-Monte-Carlo-Simulation",
   },
   {
