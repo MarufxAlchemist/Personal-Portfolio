@@ -85,7 +85,7 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
       data-testid={`card-project-${project.id}`}
     >
       <div className="relative overflow-hidden rounded-md bg-card/50">
-        <div className="aspect-[16/10] relative overflow-hidden">
+        <div className="aspect-[16/7] relative overflow-hidden">
           <motion.div
             className="absolute inset-0"
             animate={{
