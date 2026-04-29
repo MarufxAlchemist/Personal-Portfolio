@@ -90,7 +90,6 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
             className="absolute inset-0"
             animate={{
               scale: isHovered ? 1.05 : 1,
-              filter: isHovered ? "blur(0px)" : "blur(0px)",
             }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
@@ -103,6 +102,21 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
                   }}
                 />
                 {project.thumbnail({ isHovered })}
+              </div>
+            ) : project.image && !project.image.includes("placeholder") ? (
+              <div className="w-full h-full relative">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div 
+                  className="absolute inset-0"
+                  style={{
+                    background: `linear-gradient(135deg, ${project.color}15 0%, ${project.color}05 50%, transparent 100%)`,
+                  }}
+                />
               </div>
             ) : (
               <>

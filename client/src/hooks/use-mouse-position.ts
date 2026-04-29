@@ -16,8 +16,14 @@ export function useMousePosition() {
   });
 
   const rafRef = useRef<number>();
+  const lastUpdateRef = useRef(0);
 
   const updateMousePosition = useCallback((e: MouseEvent) => {
+    // Throttle to ~30fps to reduce re-renders in consumers
+    const now = performance.now();
+    if (now - lastUpdateRef.current < 33) return;
+    lastUpdateRef.current = now;
+
     if (rafRef.current) {
       cancelAnimationFrame(rafRef.current);
     }
@@ -33,7 +39,7 @@ export function useMousePosition() {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("mousemove", updateMousePosition);
+    window.addEventListener("mousemove", updateMousePosition, { passive: true });
 
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);

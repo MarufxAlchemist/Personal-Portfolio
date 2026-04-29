@@ -1,31 +1,52 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { useEffect, useRef } from "react";
 
 export function PaintingBackground() {
-  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  const layerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const layer = layerRef.current;
+    if (!layer) return;
+
+    let rafId: number;
+    let targetX = 50;
+    let targetY = 50;
+    let currentX = 50;
+    let currentY = 50;
+
     const handleMouseMove = (e: MouseEvent) => {
-      // Calculate percentage position for responsive sizing
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-      setMousePosition({ x, y });
+      targetX = (e.clientX / window.innerWidth) * 100;
+      targetY = (e.clientY / window.innerHeight) * 100;
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    const animate = () => {
+      // Smooth easing toward target
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+
+      const gradient = `radial-gradient(circle 150px at ${currentX}% ${currentY}%, transparent 0%, rgba(0,0,0,0.4) 40%, black 100%)`;
+      layer.style.maskImage = gradient;
+      layer.style.webkitMaskImage = gradient;
+
+      rafId = requestAnimationFrame(animate);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    rafId = requestAnimationFrame(animate);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-black">
       {/* Interactive disappear layer - painting visible everywhere except around cursor */}
-      <motion.div
+      <div
+        ref={layerRef}
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: 'url("/painting.jpeg")',
-          maskImage: `radial-gradient(circle 150px at ${mousePosition.x}% ${mousePosition.y}%, transparent 0%, rgba(0,0,0,0.4) 40%, black 100%)`,
-          WebkitMaskImage: `radial-gradient(circle 150px at ${mousePosition.x}% ${mousePosition.y}%, transparent 0%, rgba(0,0,0,0.4) 40%, black 100%)`,
           opacity: 0.50,
         }}
       />
