@@ -30,6 +30,7 @@ const badgeVariants = cva(
 )
 
 // Props interface for Badge
+// Extend HTML attributes and variant props
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLDivElement>,
   VariantProps<typeof badgeVariants> { }
