@@ -1,4 +1,5 @@
 // Badge component for displaying status and labels
+// React core library
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
