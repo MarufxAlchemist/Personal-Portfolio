@@ -36,6 +36,7 @@ export interface BadgeProps
   VariantProps<typeof badgeVariants> { }
 
 // Main Badge component
+// Functional component implementation
 function Badge({ className, variant, ...props }: BadgeProps) {
   // Render the badge element
   return (
