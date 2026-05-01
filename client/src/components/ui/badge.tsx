@@ -45,4 +45,5 @@ function Badge({ className, variant, ...props }: BadgeProps) {
 }
 
 // Export component and variants
+// Exporting for use in other components
 export { Badge, badgeVariants }
